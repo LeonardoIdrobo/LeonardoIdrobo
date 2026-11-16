@@ -1,0 +1,13 @@
+name: Pruebas
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  senal:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compilar y probar el generador
+        run: make -C schumann-esp32 test
